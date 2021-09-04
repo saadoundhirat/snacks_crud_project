@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav>
+<a href="{%url 'snack_list'%}">Go to snacks list</a>
+<a href="{% url 'snack_create' %}">Create new snack</a>
+</nav>
+<h1>Update Snack</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="SAVE">
+</form>
+
+{% endblock content %}

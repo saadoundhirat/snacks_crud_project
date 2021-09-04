@@ -1,18 +1,16 @@
 from django.urls import path
-
-# import the views
 from .views import (
-    HomePageView,
-    SnackListView,
-    SnackDetailView,
     SnackCreateView,
-    SnackUpdateView,
     SnackDeleteView,
-    )
-
-# path is a function the django framework provides to help with url routing and takes a path and a view then use as_view to convert it to a view
+    SnackDetailView,
+    SnackListView,
+    SnackUpdateView,
+)
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='home'),
-    path('snack/', SnackListView.as_view(), name='snack_list'),
+    path("", SnackListView.as_view(), name="snack_list"),
+    path("<int:pk>/", SnackDetailView.as_view(), name="snack_detail"),
+    path("create/", SnackCreateView.as_view(), name="snack_create"),
+    path("<int:pk>/update/", SnackUpdateView.as_view(), name="snack_update"),
+    path("<int:pk>/delete/", SnackDeleteView.as_view(), name="snack_delete"),
 ]
