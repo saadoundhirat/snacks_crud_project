@@ -8,7 +8,7 @@ from .models import Snack
 class snackTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            username="ali-rahhal", email="arahal@gmail.com", password="ali123456"
+            username="saadoun", email="saadoun@gmail.com", password="1234"
         )
 
         self.snack = Snack.objects.create(
@@ -21,7 +21,7 @@ class snackTests(TestCase):
     def test_snack_content(self):
         self.assertEqual(f"{self.snack.title}", "chips")
         self.assertEqual(f"{self.snack.description}", "cheese")
-        self.assertEqual(f"{self.snack.purchaser}", "ali-rahhal")
+        self.assertEqual(f"{self.snack.purchaser}", "saadoun")
        
 
     def test_snack_list_view(self):
