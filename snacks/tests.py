@@ -35,7 +35,7 @@ class snackTests(TestCase):
         no_response = self.client.get("/100000/")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
-        self.assertContains(response, "purchaser: ali-rahhal")
+        self.assertContains(response, "purchaser: saadoun")
         self.assertTemplateUsed(response, "snack_detail.html")
 
     def test_snack_create_view(self):
